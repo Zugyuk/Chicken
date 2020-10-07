@@ -10,6 +10,7 @@ public class ChickenController : MonoBehaviour
     public float jumpHeight = 6.5f;
     public float gravityScale = 1.5f;
     public Camera mainCamera;
+    public Animator animator;
 
     bool facingRight = true;
     float moveDirection = 0;
@@ -27,6 +28,7 @@ public class ChickenController : MonoBehaviour
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         r2d.gravityScale = gravityScale;
@@ -60,18 +62,34 @@ public class ChickenController : MonoBehaviour
             {
                 facingRight = true;
                 t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+                animator.SetBool("IsWalking", true);
             }
             if (moveDirection < 0 && facingRight)
             {
                 facingRight = false;
                 t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                animator.SetBool("IsWalking", true);
             }
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
         }
 
         // Jumping
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+        }
+
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded == false)
+        {
+            r2d.gravityScale = gravityScale * 0.5f;
+        }
+        
+        if (isGrounded && r2d.gravityScale < 1.0f)
+        {
+            r2d.gravityScale = gravityScale;
         }
 
         // Camera follow
