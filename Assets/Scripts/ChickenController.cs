@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 public class ChickenController : MonoBehaviour
 {
@@ -69,16 +70,16 @@ public class ChickenController : MonoBehaviour
             {
                 facingRight = false;
                 t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
-                animator.SetBool("IsWalking", true);
             }
         }
 
         // Duck
-        if (Input.GetKeyDown(KeyCode.S) && isGrounded)
+        if (Input.GetKey(KeyCode.S) && isGrounded)
         {
             animator.SetBool("IsDucking", true);
         }
-        if (!Input.GetKeyUp(KeyCode.S) && isGrounded)
+        
+        if (!Input.GetKey(KeyCode.S) && isGrounded)
         {
             animator.SetBool("IsDucking", false);
         }

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ChickenPeck
+  m_Name: Chicken-Duck
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -22,19 +22,7 @@ AnimationClip:
     - time: 0
       value: {fileID: -6653041783846906146, guid: 7599a6a1ec2d31c4f8ec89885b9d4318,
         type: 3}
-    - time: 0.016666668
-      value: {fileID: -5578877880840198872, guid: 7599a6a1ec2d31c4f8ec89885b9d4318,
-        type: 3}
-    - time: 0.06666667
-      value: {fileID: -1264777214858259567, guid: 7599a6a1ec2d31c4f8ec89885b9d4318,
-        type: 3}
-    - time: 0.16666667
-      value: {fileID: 3931462328902412114, guid: 7599a6a1ec2d31c4f8ec89885b9d4318,
-        type: 3}
-    - time: 0.23333333
-      value: {fileID: -5578877880840198872, guid: 7599a6a1ec2d31c4f8ec89885b9d4318,
-        type: 3}
-    - time: 0.25
+    - time: 1
       value: {fileID: -6653041783846906146, guid: 7599a6a1ec2d31c4f8ec89885b9d4318,
         type: 3}
     attribute: m_Sprite
@@ -57,17 +45,13 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: -6653041783846906146, guid: 7599a6a1ec2d31c4f8ec89885b9d4318, type: 3}
-    - {fileID: -5578877880840198872, guid: 7599a6a1ec2d31c4f8ec89885b9d4318, type: 3}
-    - {fileID: -1264777214858259567, guid: 7599a6a1ec2d31c4f8ec89885b9d4318, type: 3}
-    - {fileID: 3931462328902412114, guid: 7599a6a1ec2d31c4f8ec89885b9d4318, type: 3}
-    - {fileID: -5578877880840198872, guid: 7599a6a1ec2d31c4f8ec89885b9d4318, type: 3}
     - {fileID: -6653041783846906146, guid: 7599a6a1ec2d31c4f8ec89885b9d4318, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.26666668
+    m_StopTime: 1.0166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
