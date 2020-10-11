@@ -6,15 +6,15 @@ using UnityEngine.Events;
 public class ChickenController : MonoBehaviour
 {
     // Move player in 2D space
-    public float maxSpeed = 3.4f;
-    public float jumpHeight = 6.5f;
-    public float gravityScale = 1.5f;
+    [SerializeField] private float maxSpeed = 3.4f;
+    [SerializeField] private float jumpHeight = 6.5f;
+    [SerializeField] private float gravityScale = 1.5f;
     public Camera mainCamera;
-    public Animator animator;
+    private Animator animator;
 
     bool facingRight = true;
-    float moveDirection = 0;
-    public bool isGrounded = false;
+    private float moveDirection = 0;
+    [SerializeField] private bool isGrounded = false;
     Vector3 cameraPos;
     Rigidbody2D r2d;
     Collider2D mainCollider;
@@ -46,6 +46,7 @@ public class ChickenController : MonoBehaviour
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || r2d.velocity.x > 0.01f))
         {
             moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
+            animator.SetBool("IsWalking", true);
         }
         else
         {
@@ -53,6 +54,7 @@ public class ChickenController : MonoBehaviour
             {
                 moveDirection = 0;
             }
+            animator.SetBool("IsWalking", false);
         }
 
         // Change facing direction
@@ -62,7 +64,6 @@ public class ChickenController : MonoBehaviour
             {
                 facingRight = true;
                 t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
-                animator.SetBool("IsWalking", true);
             }
             if (moveDirection < 0 && facingRight)
             {
@@ -71,9 +72,15 @@ public class ChickenController : MonoBehaviour
                 animator.SetBool("IsWalking", true);
             }
         }
-        else
+
+        // Duck
+        if (Input.GetKeyDown(KeyCode.S) && isGrounded)
         {
-            animator.SetBool("IsWalking", false);
+            animator.SetBool("IsDucking", true);
+        }
+        if (!Input.GetKeyUp(KeyCode.S) && isGrounded)
+        {
+            animator.SetBool("IsDucking", false);
         }
 
         // Jumping
