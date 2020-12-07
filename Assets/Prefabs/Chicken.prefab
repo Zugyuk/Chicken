@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4431471168965744613}
   - component: {fileID: 4431471168965744609}
   - component: {fileID: 4431471168965744611}
-  - component: {fileID: 6364975031601875063}
   - component: {fileID: 313683710308105849}
+  - component: {fileID: 1527207506990453223}
   m_Layer: 9
   m_Name: Chicken
   m_TagString: Untagged
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4431471168965744614}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.428, y: 2.26, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.1564345, y: 0, z: 0, w: 0.98768836}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -18, y: 0, z: 0}
 --- !u!212 &4431471168965744613
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98,11 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1065339cde7aa4088a9d7e29c1c853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3.4
-  jumpHeight: 6.5
-  gravityScale: 1.5
-  mainCamera: {fileID: 0}
-  isGrounded: 0
+  currentSpeed: 5
 --- !u!50 &4431471168965744611
 Rigidbody2D:
   serializedVersion: 4
@@ -118,43 +114,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!68 &6364975031601875063
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4431471168965744614}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.59711134, y: 0.26999784}
-  - {x: -0.46749878, y: -0.008211374}
-  - {x: -0.27769136, y: -0.20036435}
-  - {x: -0.3251189, y: -0.37157393}
-  - {x: -0.15271652, y: -0.38483834}
-  - {x: -0.20589173, y: -0.26919484}
-  - {x: -0.036969423, y: -0.19131708}
-  - {x: 0.11773467, y: -0.38797152}
-  - {x: 0.35231817, y: -0.3884189}
-  - {x: 0.09459472, y: -0.21629071}
-  - {x: 0.15220189, y: -0.10811186}
-  - {x: 0.3774587, y: -0.042823315}
-  - {x: 0.48720658, y: 0.21270323}
-  - {x: 0.6145334, y: 0.23386264}
-  - {x: 0.58535194, y: 0.33945704}
 --- !u!95 &313683710308105849
 Animator:
   serializedVersion: 3
@@ -174,3 +139,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &1527207506990453223
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431471168965744614}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01829058, y: -0.06449902}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.21, y: 0.79}
+    newSize: {x: 1.21, y: 0.79}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8513447, y: 0.6610019}
+  m_EdgeRadius: 0
